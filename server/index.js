@@ -76,7 +76,7 @@ app.post('/nam', (req, res) => {
     return res.status(401).json({ error: 'Invalid credentials' });
   }
 
-  fetch('http://localhost:8080/teams')
+  fetch('${import.meta.env.VITE_API_BASE}/teams')
     .then(response => response.json())
     .then(data => {
       const fullUser = data.find(team => team.id === user.id);

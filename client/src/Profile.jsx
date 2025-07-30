@@ -38,7 +38,7 @@ function Profile() {
       setLoading(true);
       setError("");
 
-      const res = await fetch("${import.meta.env.VITE_API_BASE}/nam", {
+      const res = await fetch("${import.meta.env.VITE_SERVER_BASE}/nam", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(credentials),
@@ -76,7 +76,7 @@ function Profile() {
       setError("");
 
       const credentials = JSON.parse(storedCredentials);
-      const res = await fetch("${import.meta.env.VITE_API_BASE}/nam", {
+      const res = await fetch("${import.meta.env.VITE_SERVER_BASE}/nam", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(credentials),
